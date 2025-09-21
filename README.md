@@ -12,5 +12,3 @@ Over time the aim is to add more algorithms (UCB, Thompson Sampling, etc.) and m
 
 ---
 
-## 📂 Repository Structure
-
