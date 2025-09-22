@@ -11,7 +11,7 @@ This repository implements a framework for simulating and comparing **multi-arme
 Over time the aim is to add more algorithms (UCB, Thompson Sampling, etc.) and more bandit types.
 
 ---
-#⚡Quick Start
+## ⚡Quick Start
 
 import numpy as np
 from bandit_env import Bandit
