@@ -17,24 +17,27 @@ import numpy as np
 from bandit_env import Bandit
 from epsilon_greedy import EGreedy
 
-num_arms= 5
-epsilon=0.1
-steps=5000
+# Parameters
+num_arms = 5
+epsilon = 0.1
+steps = 5000
 
-agent = EGreedy(num_arms=num_arms, epsilon_decay=False)
+# Initialize agent and environment
+agent = EGreedy(num_arms=num_arms, epsilon=epsilon, epsilon_decay=False)
 env = Bandit(num_arms=num_arms, stationary=True, seed=44)
 
+# Track rewards and regret
 rewards = np.zeros(steps)
 regrets = np.zeros(steps)
 
-
 for t in range(steps):
-    action, reward = agent.step(env)                # agent chooses and updates
-    optimal_action = env.optimal_action()           # oracle best action
-    optimal_reward = env.q_true[optimal_action]     # true best reward
+    action, reward = agent.step(env)             # agent chooses and updates
+    optimal_action = env.optimal_action()        # oracle best action
+    optimal_reward = env.q_true[optimal_action]  # true best reward
     regrets[t] = optimal_reward - reward
     rewards[t] = reward
 
 print(f"Average reward: {rewards.mean():.3f}")
 print(f"Total regret: {regrets.sum():.3f}")
+
 
