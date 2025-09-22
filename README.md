@@ -11,8 +11,11 @@ This repository implements a framework for simulating and comparing **multi-arme
 Over time the aim is to add more algorithms (UCB, Thompson Sampling, etc.) and more bandit types.
 
 ---
-## ⚡Quick Start
+## ⚡ Quick Start
 
+Here’s a minimal example of running the **ε-Greedy agent** on a bandit environment:
+
+```python
 import numpy as np
 from bandit_env import Bandit
 from epsilon_greedy import EGreedy
@@ -39,5 +42,4 @@ for t in range(steps):
 
 print(f"Average reward: {rewards.mean():.3f}")
 print(f"Total regret: {regrets.sum():.3f}")
-
 
